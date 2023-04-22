@@ -5,5 +5,5 @@ export const fetchData = async () => {
         .catch(err => console.log(err));
     
     const response = await data;
-    return response
+    return response[response.length-1]
 }
