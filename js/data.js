@@ -1,5 +1,5 @@
 export const fetchData = async () => {
-    const data = await fetch("https://tryingrailway-production.up.railway.app/progress")
+    const data = await fetch("./json/output.json")//https://tryingrailway-production.up.railway.app/progress")
         .then(res => res.json())
         .then(data => data)
         .catch(err => console.log(err));
