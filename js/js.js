@@ -1,7 +1,7 @@
 import { fetchData } from "./data.js";
 
 const data = await fetchData();
-const bk_time = new Date(data.ano, data.mes-1, data.dia, data.hora, data.minuto, data.segundo)
+const bk_time = data;
 
 const settingColor = (dayDif, timeDif) => {
     let color;
@@ -31,7 +31,7 @@ const settingColor = (dayDif, timeDif) => {
 
 setInterval(() => {
     const now = new Date();
-    const timeDif = now.getTime() - bk_time.getTime();
+    const timeDif = now.getTime() - bk_time;
 
     const dayDif = parseInt(timeDif/1000/3600/24);
     const hourDif = parseInt(timeDif/1000/3600%24);
