@@ -6,23 +6,26 @@ const bk_time = data;
 const settingColor = (dayDif, timeDif) => {
     let color;
 
-    if (dayDif == 0) {
-        color = '#fff';
+    if (dayDif < 2) {
+        color = '#ff4e28';
     }
     else if (dayDif < 6) {
-        color = '#00ff7f'
+        color = '#8cff56'
     }
     else if (dayDif < 13) {
-        color = '#f00'
+        color = '#ffd52a'
+    }
+    else if (dayDif < 21) {
+        color = '#ff0000';
     }
     else if (dayDif < 30) {
-        color = '#0ff';
+        color = '#32ffe9'
     }
     else if (dayDif < 90){
         color = '#550fc1';
     }
     else {
-        color = '#ffd700';
+        color = '#fff';
     }
 
     document.querySelector("#clock").style.setProperty('background',`conic-gradient(${color} ${timeDif%86400000/1000/3600/24*360}deg, black 0deg)`);
